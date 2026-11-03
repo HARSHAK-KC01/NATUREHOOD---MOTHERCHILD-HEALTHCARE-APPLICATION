@@ -60,10 +60,12 @@
             "@types/react": "^19.2.2",
             "@types/react-dom": "^19.2.2",
             "@vitejs/plugin-react-swc": "^3.10.2",
+            "concurrently": "^10.0.6",
             "typescript": "^5.9.3",
             "vite": "6.3.5"
       },
       "scripts": {
+            "start": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,green\" \"node server/index.js\" \"vite\"",
             "dev": "vite",
             "server": "node server/index.js",
             "build": "vite build"
